@@ -1,24 +1,27 @@
 package com.vdzon.tntassessment;
 
-import io.javalin.Javalin;
+import com.vdzon.tntassessment.rest.Rest;
+import com.vdzon.tntassessment.settings.Settings;
+import com.vdzon.tntassessment.settings.SettingsLoader;
 
 public class Main {
-    private final Javalin app;
+    private final Rest rest;
 
     public static void main(String[] args) {
-        new Main().start();
+        Settings settings = SettingsLoader.loadSettings();
+        new Main(settings).start();
     }
 
-    public Main() {
-        app = Javalin.create().start(7000);
+    public Main(Settings settings) {
+        rest = new Rest(settings.getPort());
     }
 
     public void start() {
-        app.get("/health", ctx -> ctx.result("ok"));
+        rest.start();
     }
 
     public void stop() {
-        app.stop();
+        rest.stop();
     }
 
 }

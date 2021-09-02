@@ -1,6 +1,7 @@
 package com.vdzon.tntassessment.integration;
 
 import com.vdzon.tntassessment.Main;
+import com.vdzon.tntassessment.settings.Settings;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,8 +17,15 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class IntegrationTest {
 
-    private final Main main = new Main();
+    private final Main main = new Main(loadTestSettings());
     private final HttpClient httpClient = HttpClient.newBuilder().build();
+
+    private Settings loadTestSettings() {
+        return Settings
+                .builder()
+                .port(7000)
+                .build();
+    }
 
     @BeforeEach
     void beforeEach(){

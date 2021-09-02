@@ -21,6 +21,7 @@
         <junit-jupiter-engine.version>5.7.2</junit-jupiter-engine.version>
         <junit5.version>4.2.10</junit5.version>
         <assertj-core.version>3.20.2</assertj-core.version>
+        <config.version>1.4.1</config.version>
     </properties>
 
     <dependencies>
@@ -35,6 +36,11 @@
             <artifactId>lombok</artifactId>
             <version>${lombok.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>${config.version}</version>
         </dependency>
 
         <!-- libraries needed for javalin -->

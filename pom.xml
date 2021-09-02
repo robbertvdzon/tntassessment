@@ -13,12 +13,12 @@
         <maven.compiler.target>11</maven.compiler.target>
         <javalin.version>3.13.11</javalin.version>
         <slf4j-simple.version>1.8.0-beta4</slf4j-simple.version>
-        <jackson-databind.version>2.10.5</jackson-databind.version>
+        <jackson-databind.version>2.12.5</jackson-databind.version>
         <lombok.version>1.18.20</lombok.version>
-        <io.micrometer>1.7.1</io.micrometer>
+        <io.micrometer>1.7.2</io.micrometer>
         <commons-io.version>2.11.0</commons-io.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
-        <junit-jupiter-engine.version>5.1.0</junit-jupiter-engine.version>
+        <junit-jupiter-engine.version>5.7.2</junit-jupiter-engine.version>
         <junit5.version>4.2.10</junit5.version>
         <assertj-core.version>3.20.2</assertj-core.version>
     </properties>

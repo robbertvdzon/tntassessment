@@ -46,6 +46,15 @@ public class IntegrationTest {
         assertThat(send.body()).isEqualTo("ok");
     }
 
+    @Test
+    void testHappyflow() throws URISyntaxException, IOException, InterruptedException {
+        HttpRequest request = buildGetRequest("http://localhost:7000/aggregation?pricing=NL,CN&track=109347263,123456891&shipments=109347263,123456891");
+        HttpResponse<String> send = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+
+        assertThat(send.statusCode()).isEqualTo(200);
+        assertThat(send.body()).isEqualTo("ok");
+    }
+
     private HttpRequest buildGetRequest(String url) throws URISyntaxException {
         return HttpRequest.newBuilder()
                 .uri(new URI(url))

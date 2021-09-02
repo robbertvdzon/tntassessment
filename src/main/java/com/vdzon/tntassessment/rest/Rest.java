@@ -16,7 +16,7 @@ public class Rest {
 
     public void start() {
         app.get("/health", ctx -> ctx.result("ok"));
-        app.get("/aggregation", ctx -> getAggregation(ctx));
+        app.get("/aggregation", this::getAggregation);
     }
 
     private Context getAggregation(Context ctx) {
